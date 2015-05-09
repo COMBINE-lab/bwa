@@ -204,7 +204,7 @@ int bwa_index(int argc, char *argv[]) // the "index" command
 			break;
 		case 'p': prefix = strdup(optarg); break;
 		case '6': is_64 = 1; break;
-		case 's': sa_sample_interval = strtod(optarg);
+		case 's': sa_sample_interval = strtol(optarg);
 		case 'b':
 			block_size = strtol(optarg, &str, 10);
 			if (*str == 'G' || *str == 'g') block_size *= 1024 * 1024 * 1024;
