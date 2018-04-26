@@ -250,12 +250,12 @@ int bwa_index(int argc, char *argv[]) // the "index" command
 		strcpy(prefix, argv[optind]);
 		if (is_64) strcat(prefix, ".64");
 	}
-	bwa_idx_build(argv[optind], prefix, algo_type, block_size);
+	bwa_idx_build(argv[optind], prefix, algo_type, block_size, sa_sample_interval);
 	free(prefix);
 	return 0;
 }
 
-int bwa_idx_build(const char *fa, const char *prefix, int algo_type, int block_size)
+int bwa_idx_build(const char *fa, const char *prefix, int algo_type, int block_size, int sa_sample_interval)
 {
 	extern void bwa_pac_rev_core(const char *fn, const char *fn_rev);
 
